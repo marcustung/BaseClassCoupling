@@ -9,15 +9,15 @@ namespace BaseClassCoupling
         [TestMethod]
         public void calculate_LessThanOneYearEmployee_Bonus()
         {
-            //if my monthly salary is 1200, working year is 0.5, my bonus should be 600
-            var lessThanOneYearEmployee = new LessThanOneYearEmployee()
+			//if my monthly salary is 1200, working year is 0.5, my bonus should be 600
+			var lessThanOneYearEmployee = new LessThanOneYearEmployee()
             {
                 Id = 91,
-                //Console.WriteLine("your StartDate should be :{0}", DateTime.Today.AddDays(365/2*-1));
                 StartWorkingDate = new DateTime(2017, 7, 29)
             };
+	        Console.WriteLine("your StartDate should be :{0}", DateTime.Today.AddDays(365/2*-1));
 
-            var actual = lessThanOneYearEmployee.GetYearlyBonus();
+			var actual = lessThanOneYearEmployee.GetYearlyBonus();
             Assert.AreEqual(600, actual);
         }
     }
@@ -53,7 +53,7 @@ namespace BaseClassCoupling
         }
     }
 
-    public class DebugHelper
+	public class DebugHelper
     {
         public static void Info(string message)
         {
